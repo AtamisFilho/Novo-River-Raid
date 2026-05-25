@@ -1,0 +1,278 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
+[application]
+
+config/name="Novo River Raid"
+config/description="Clone modernizado de River Raid com co-op local, dificuldade ajustavel e controles remapeaveis."
+run/main_scene="res://scenes/Boot.tscn"
+config/features=PackedStringArray("4.6")
+config/icon="res://icon.svg"
+
+[autoload]
+
+GameSettings="*res://scripts/globals/GameSettings.gd"
+GameState="*res://scripts/globals/GameState.gd"
+Palette="*res://scripts/globals/Palette.gd"
+
+[display]
+
+window/size/viewport_width=480
+window/size/viewport_height=720
+window/size/window_width_override=720
+window/size/window_height_override=1080
+window/stretch/mode="canvas_items"
+
+[input]
+
+p1_up={
+"deadzone": 0.5,
+"events": [{
+"device": 0,
+"keycode": 87,
+"physical_keycode": 0,
+"type": "key"
+}, {
+"axis": 1,
+"axis_value": -1.0,
+"device": -1,
+"joy_device": 0,
+"type": "joypad_motion"
+}, {
+"button_index": 12,
+"device": -1,
+"joy_device": 0,
+"type": "joypad_button"
+}]
+}
+p1_down={
+"deadzone": 0.5,
+"events": [{
+"device": 0,
+"keycode": 83,
+"physical_keycode": 0,
+"type": "key"
+}, {
+"axis": 1,
+"axis_value": 1.0,
+"device": -1,
+"joy_device": 0,
+"type": "joypad_motion"
+}, {
+"button_index": 13,
+"device": -1,
+"joy_device": 0,
+"type": "joypad_button"
+}]
+}
+p1_left={
+"deadzone": 0.5,
+"events": [{
+"device": 0,
+"keycode": 65,
+"physical_keycode": 0,
+"type": "key"
+}, {
+"axis": 0,
+"axis_value": -1.0,
+"device": -1,
+"joy_device": 0,
+"type": "joypad_motion"
+}, {
+"button_index": 14,
+"device": -1,
+"joy_device": 0,
+"type": "joypad_button"
+}]
+}
+p1_right={
+"deadzone": 0.5,
+"events": [{
+"device": 0,
+"keycode": 68,
+"physical_keycode": 0,
+"type": "key"
+}, {
+"axis": 0,
+"axis_value": 1.0,
+"device": -1,
+"joy_device": 0,
+"type": "joypad_motion"
+}, {
+"button_index": 15,
+"device": -1,
+"joy_device": 0,
+"type": "joypad_button"
+}]
+}
+p1_shoot={
+"deadzone": 0.5,
+"events": [{
+"device": 0,
+"keycode": 32,
+"physical_keycode": 0,
+"type": "key"
+}, {
+"button_index": 0,
+"device": -1,
+"joy_device": 0,
+"type": "joypad_button"
+}]
+}
+p1_accel={
+"deadzone": 0.5,
+"events": [{
+"device": 0,
+"keycode": 16777237,
+"physical_keycode": 0,
+"type": "key"
+}, {
+"button_index": 7,
+"device": -1,
+"joy_device": 0,
+"type": "joypad_button"
+}]
+}
+p1_brake={
+"deadzone": 0.5,
+"events": [{
+"device": 0,
+"keycode": 16777238,
+"physical_keycode": 0,
+"type": "key"
+}, {
+"button_index": 6,
+"device": -1,
+"joy_device": 0,
+"type": "joypad_button"
+}]
+}
+p2_up={
+"deadzone": 0.5,
+"events": [{
+"device": 0,
+"keycode": 16777232,
+"physical_keycode": 0,
+"type": "key"
+}, {
+"axis": 1,
+"axis_value": -1.0,
+"device": -1,
+"joy_device": 1,
+"type": "joypad_motion"
+}, {
+"button_index": 12,
+"device": -1,
+"joy_device": 1,
+"type": "joypad_button"
+}]
+}
+p2_down={
+"deadzone": 0.5,
+"events": [{
+"device": 0,
+"keycode": 16777234,
+"physical_keycode": 0,
+"type": "key"
+}, {
+"axis": 1,
+"axis_value": 1.0,
+"device": -1,
+"joy_device": 1,
+"type": "joypad_motion"
+}, {
+"button_index": 13,
+"device": -1,
+"joy_device": 1,
+"type": "joypad_button"
+}]
+}
+p2_left={
+"deadzone": 0.5,
+"events": [{
+"device": 0,
+"keycode": 16777231,
+"physical_keycode": 0,
+"type": "key"
+}, {
+"axis": 0,
+"axis_value": -1.0,
+"device": -1,
+"joy_device": 1,
+"type": "joypad_motion"
+}, {
+"button_index": 14,
+"device": -1,
+"joy_device": 1,
+"type": "joypad_button"
+}]
+}
+p2_right={
+"deadzone": 0.5,
+"events": [{
+"device": 0,
+"keycode": 16777233,
+"physical_keycode": 0,
+"type": "key"
+}, {
+"axis": 0,
+"axis_value": 1.0,
+"device": -1,
+"joy_device": 1,
+"type": "joypad_motion"
+}, {
+"button_index": 15,
+"device": -1,
+"joy_device": 1,
+"type": "joypad_button"
+}]
+}
+p2_shoot={
+"deadzone": 0.5,
+"events": [{
+"device": 0,
+"keycode": 16777221,
+"physical_keycode": 0,
+"type": "key"
+}, {
+"button_index": 0,
+"device": -1,
+"joy_device": 1,
+"type": "joypad_button"
+}]
+}
+ui_pause={
+"deadzone": 0.5,
+"events": [{
+"device": 0,
+"keycode": 16777217,
+"physical_keycode": 0,
+"type": "key"
+}, {
+"button_index": 6,
+"device": -1,
+"joy_device": 0,
+"type": "joypad_button"
+}]
+}
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
