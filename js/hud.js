@@ -23,9 +23,8 @@ export class HUD {
   }
 
   update() {
-    for (let i = 0; i < GameState.maxFuel; i++) {
-      if (i < 2) this.distances[i] = GameState.getDistanceKm(i);
-    }
+    this.distances[0] = GameState.getDistanceKm(0);
+    this.distances[1] = GameState.getDistanceKm(1);
   }
 
   draw(ctx) {

@@ -51,8 +51,6 @@ Conecte um controle e ele funciona automaticamente. O primeiro controle vira o P
 ### Celular (toque)
 Botões virtuais aparecem automaticamente em dispositivos de toque: D-pad à esquerda, botão FIRE à direita.
 
-Tudo isso pode ser reconfigurado em **Configurações → Controles**.
-
 ---
 
 ## Estrutura do projeto
@@ -68,6 +66,7 @@ Novo River Raid/
 │   ├── game-settings.js    # Configurações (dificuldade, jogadores, save/load)
 │   ├── game-state.js       # Estado da partida (pontuação, vidas, combustível)
 │   ├── input.js            # Gerenciador de input (teclado + gamepad + toque)
+│   ├── touch-state.js      # Estado global dos controles de toque
 │   ├── river-field.js      # Rio procedural (terreno, água, céu, árvores)
 │   ├── player.js           # Nave do jogador
 │   ├── bullet.js           # Projétil

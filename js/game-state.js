@@ -30,6 +30,16 @@ export const GameState = {
     listeners[event] = listeners[event].filter(f => f !== fn);
   },
 
+  // Remove all listeners for a specific event (useful for scene cleanup)
+  offAll(event) {
+    delete listeners[event];
+  },
+
+  // Remove all listeners entirely (full reset)
+  clearAllListeners() {
+    for (const key in listeners) delete listeners[key];
+  },
+
   reset() {
     for (let i = 0; i < MAX_PLAYERS; i++) {
       this.scores[i]    = 0;
@@ -40,6 +50,8 @@ export const GameState = {
     this.active[0] = true;
     this.active[1] = (this._playerCount >= 2);
     this.gameRunning = true;
+    // Clear all listeners to prevent accumulation across game sessions
+    this.clearAllListeners();
   },
 
   // Internal reference to settings player count
