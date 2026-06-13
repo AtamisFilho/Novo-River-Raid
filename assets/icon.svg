@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Sky background -->
+  <rect width="64" height="64" rx="8" fill="#0d1433"/>
+  <!-- River -->
+  <path d="M20 0 L18 64 L46 64 L44 0 Z" fill="#143580"/>
+  <!-- Left bank -->
+  <path d="M0 0 L20 0 L18 64 L0 64 Z" fill="#0d4d0d"/>
+  <!-- Right bank -->
+  <path d="M44 0 L46 64 L64 64 L64 0 Z" fill="#0d4d0d"/>
+  <!-- Jet (player) -->
+  <polygon points="32,14 24,34 29,30 32,36 35,30 40,34" fill="#d9e8ff" stroke="#8099cc" stroke-width="0.5"/>
+  <!-- Exhaust -->
+  <polygon points="29,36 31,44 33,44 35,36" fill="#ff9900" opacity="0.8"/>
+  <polygon points="30,36 32,40 34,36" fill="#ffe660" opacity="0.9"/>
+  <!-- Bullet -->
+  <ellipse cx="32" cy="8" rx="2" ry="4" fill="#ffe660"/>
+</svg>

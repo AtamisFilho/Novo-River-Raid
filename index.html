@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="Novo River Raid — Clone modernizado do clássico River Raid como Web App. Co-op local, dificuldade ajustável, controles remapeáveis.">
+  <meta name="theme-color" content="#0a0a1a">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Novo River Raid</title>
+  <link rel="icon" type="image/svg+xml" href="assets/icon.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="game-wrapper">
+    <canvas id="game-canvas" width="480" height="720"></canvas>
+    <div id="touch-controls">
+      <div class="touch-dpad">
+        <button class="touch-btn" data-dir="up" data-action="p1_up">▲</button>
+        <button class="touch-btn" data-dir="left" data-action="p1_left">◄</button>
+        <button class="touch-btn" data-dir="right" data-action="p1_right">►</button>
+        <button class="touch-btn" data-dir="down" data-action="p1_down">▼</button>
+      </div>
+      <button class="touch-fire" data-action="p1_shoot">FIRE</button>
+    </div>
+  </div>
+
+  <script type="module">
+    import { App } from './js/app.js';
+    import { touchState } from './js/touch-state.js';
+
+    // Initialize the game
+    const canvas = document.getElementById('game-canvas');
+    const app = new App(canvas);
+
+    // Touch controls integration
+    const touchButtons = document.querySelectorAll('[data-action]');
+
+    touchButtons.forEach(btn => {
+      const action = btn.dataset.action;
+
+      const startHandler = (e) => {
+        e.preventDefault();
+        touchState[action] = true;
+        btn.classList.add('pressed');
+      };
+
+      const endHandler = (e) => {
+        e.preventDefault();
+        touchState[action] = false;
+        btn.classList.remove('pressed');
+      };
+
+      btn.addEventListener('touchstart', startHandler, { passive: false });
+      btn.addEventListener('touchend', endHandler, { passive: false });
+      btn.addEventListener('touchcancel', endHandler, { passive: false });
+      btn.addEventListener('mousedown', startHandler);
+      btn.addEventListener('mouseup', endHandler);
+      btn.addEventListener('mouseleave', endHandler);
+    });
+
+    // Prevent default touch behavior on canvas
+    canvas.addEventListener('touchstart', (e) => e.preventDefault(), { passive: false });
+    canvas.addEventListener('touchmove', (e) => e.preventDefault(), { passive: false });
+  </script>
+</body>
+</html>

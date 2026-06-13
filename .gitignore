@@ -1,0 +1,12 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# No build artifacts needed — this is a pure web app
+# (no node_modules, no .godot cache, no binary exports)
